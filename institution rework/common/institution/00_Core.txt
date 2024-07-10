@@ -452,7 +452,7 @@ renaissance = {
 				superregion = europe_superregion
 			}
 			custom_trigger_tooltip = {
-				tooltip = tooltip_development_10
+				tooltip = tooltip_development_10_europe_superregion
 				superregion = europe_superregion
 				development = 10
 			}
@@ -476,7 +476,7 @@ renaissance = {
 				superregion = europe_superregion
 			}
 			custom_trigger_tooltip = {
-				tooltip = tooltip_development_20
+				tooltip = tooltip_development_20_europe_superregion
 				development = 20
 				superregion = europe_superregion
 			}
@@ -707,7 +707,10 @@ new_world_i = {
 		OR = {
 			province_has_center_of_trade_of_level = 1
 			development = 15
-			is_capital = yes
+			AND = {
+				is_capital = yes
+				development = 10
+			}
 		}
 		is_in_capital_area = yes
 		owner = { 
@@ -856,7 +859,7 @@ new_world_i = {
 				}
 			}
 			custom_trigger_tooltip = {
-				tooltip = tooltip_has_colonial_subject_in_new_world
+				tooltip = tooltip_has_province_in_new_world
 				is_owned_by_trade_company = no
 				OR = {
 					has_port = yes
@@ -886,11 +889,18 @@ new_world_i = {
 			scale = yes
 			potential = {
 				superregion = europe_superregion
+				OR = {
+					has_port = yes
+					is_capital = yes
+				}
 			}
 			custom_trigger_tooltip = {
-				tooltip = tooltip_development_10
-				development = 10
+				tooltip = tooltip_colonialism_origin
 				superregion = europe_superregion
+				OR = {
+					has_port = yes
+					is_capital = yes
+				}
 			}
 		}
 		
@@ -1091,9 +1101,15 @@ printing_press = {
 		is_island = no
 		is_state = yes
 		OR = {
-			development = 15
-			is_capital = yes
-			trade_goods = paper
+			development = 20
+			AND = {
+				is_capital = yes
+				development = 15
+			}
+			AND = {
+				trade_goods = paper
+				development = 10
+			}
 		}
 		OR = {
 			religion = protestant
@@ -1519,6 +1535,12 @@ global_trade = {
 		}
 		
 		modifier = {
+			factor = 0.01
+			scale = yes
+			is_owned_by_trade_company = no
+			province_trade_power = 30
+		}
+		modifier = {
 			factor = 0.05
 			scale = yes
 			is_owned_by_trade_company = no
@@ -1761,7 +1783,7 @@ manufactories = {
 		is_state = yes
 		development = 30
 		custom_trigger_tooltip = {
-			tooltip = two_neighbor_dev_15_provinces
+			tooltip = two_neighbor_dev_20_provinces
 			calc_true_if = {
 				amount = 2
 				all_neighbor_province = {
@@ -2345,6 +2367,19 @@ enlightenment = {
 				is_capital = yes
 			}
 			custom_trigger_tooltip = {
+				tooltip = tooltip_inovativeness_50
+				owner = {
+					innovativeness = 50
+				}
+			}
+		}
+		modifier = {
+			factor = 0.1
+			scale = yes
+			potential = {
+				is_capital = yes
+			}
+			custom_trigger_tooltip = {
 				tooltip = tooltip_inovativeness_100
 				owner = {
 					innovativeness = 100
@@ -2420,7 +2455,7 @@ enlightenment = {
 				}
 			}
 			custom_trigger_tooltip = {
-				tooltip = tooltip_philosopher_capital
+				tooltip = tooltip_philosopher_capital_24
 				is_capital = yes
 				owner = {
 					advisor = philosopher
@@ -2436,7 +2471,7 @@ enlightenment = {
 				}
 			}
 			custom_trigger_tooltip = {
-				tooltip = tooltip_scientist_capital
+				tooltip = tooltip_scientist_capital_24
 				is_capital = yes
 				owner = {
 					advisor = natural_scientist
@@ -2452,11 +2487,11 @@ enlightenment = {
 				}
 			}
 			custom_trigger_tooltip = {
-				tooltip = tooltip_full_innovativeness
+				tooltip = tooltip_full_innovativeness_23
 				is_capital = yes
 				owner = {
 					full_idea_group = innovativeness_ideas
-					dip_tech = 24
+					dip_tech = 23
 				}
 			}
 		}
@@ -2731,7 +2766,7 @@ industrialization = {
 				development = 30
 			}
 			custom_trigger_tooltip = {
-				tooltip = tooltip_inovativeness_100
+				tooltip = tooltip_inovativeness_100_i
 				is_owned_by_trade_company = no
 				owner = {
 					innovativeness = 100
@@ -2747,7 +2782,7 @@ industrialization = {
 				development = 30
 			}
 			custom_trigger_tooltip = {
-				tooltip = tooltip_inovativeness_200
+				tooltip = tooltip_inovativeness_200_i
 				is_owned_by_trade_company = no
 				owner = {
 					innovativeness = 200

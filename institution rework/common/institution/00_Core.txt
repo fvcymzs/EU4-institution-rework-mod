@@ -800,7 +800,7 @@ new_world_i = {
 				}
 			}
 			custom_trigger_tooltip = {
-				tooltip = tooltip_neighbor_port_province_new_world
+				tooltip = tooltip_any_neighbor_has_embraced_colonialism
 				any_neighbor_province = {
 					new_world_i = 100
 				}
@@ -2448,7 +2448,8 @@ enlightenment = {
 			}
 		}
 		modifier = {
-			factor = 0.1
+			factor = 0.05
+			scale = yes
 			potential = {
 				enlightenment_origin = {
 					same_continent = PREV
@@ -2464,7 +2465,8 @@ enlightenment = {
 			}
 		}
 		modifier = {
-			factor = 0.1
+			factor = 0.05
+			scale = yes
 			potential = {
 				enlightenment_origin = {
 					same_continent = PREV
@@ -2480,7 +2482,8 @@ enlightenment = {
 			}
 		}
 		modifier = {
-			factor = 0.2
+			factor = 0.1
+			scale = yes
 			potential = {
 				enlightenment_origin = {
 					same_continent = PREV

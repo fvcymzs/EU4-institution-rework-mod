@@ -13,3 +13,6 @@
  tooltip_inovativeness_100_i:0 "30 development province of country with innovativeness 100"
  tooltip_inovativeness_200_i:0 "30 development province of country with innovativeness 200"
  tooltip_100_trade_power_and_50_percent_of_income_from_trade:0 "100 trade power province of 50 percent income from trade country"
+ tooltip_any_neighbor_has_embraced_colonialism:0 "Any neighbor province has embraced Colonialism"
+ tooltip_any_friendly_coast_border_province_has_embraced_global_trade:0 "Any friendly neighbor province has embraced Global Trade"
+ tooltip_any_neighbor_has_embraced_global_trade:0 "Any neighbor province has embraced Global Trade"

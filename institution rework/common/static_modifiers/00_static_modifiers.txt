@@ -62,13 +62,9 @@ difficulty_normal_ai = {
 }
 
 difficulty_hard_ai = {
-	manpower_recovery_speed = 0.50
-	global_unrest = -1
-	war_exhaustion = -0.05
-	interest = -1
 	ae_impact = -0.33
-	missionary_maintenance_cost = -0.15
-
+	improve_relation_modifier = 0.5
+	governing_capacity = 1000
 }
 
 difficulty_very_hard_ai = {
@@ -245,21 +241,21 @@ provincial_tax_income = {
 	regiment_recruit_speed = -0.02
 	local_great_project_upgrade_time = -0.01
 	local_build_time = -0.01
-	local_institution_spread = 0.02
 }
 
 provincial_production_size = {
 	trade_goods_size = 0.2
 	ship_recruit_speed = -0.01
+	local_institution_spread = 0.02
 }
 
 knowledge_sharing = {
-	institution_growth = 0.6
+	institution_growth = 1.2
 	monthly_russian_modernization = 0.06
 }
 
 cardinals_spread_institution = {
-	institution_growth = 1.2
+	institution_growth = 2
 }
 
 manpower = {
@@ -272,7 +268,7 @@ province_razed = {
 
 development = {
 	allowed_num_of_buildings = 0.1
-	supply_limit_modifier = 0.02
+	supply_limit_modifier = 0.05
 	local_missionary_strength = -0.001
 	land_forcelimit	= 0.1			# special case, affected by autonomy
 	naval_forcelimit = 0.1			# special case, affected by autonomy & set to 0 by code if not port
@@ -551,7 +547,7 @@ resource_depleted = {
 in_trade_company = {
 	province_trade_power_modifier = 1
 	naval_forcelimit = 0.5
-	local_missionary_strength = -0.2
+	local_missionary_strength = -0.02
 	local_institution_spread = 0.10
 	local_governing_cost = 0.25
 }
@@ -627,6 +623,7 @@ stability = {
 	global_spy_defence = 0.05				#-15 to +15% modifier
 	monthly_cultural_unity = 0.1
 	monthly_divine_authority = 0.05
+	global_monthly_devastation = -0.05
 }
 
 positive_stability = {

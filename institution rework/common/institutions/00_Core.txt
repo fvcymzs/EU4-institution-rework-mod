@@ -867,22 +867,28 @@ new_world_i = {
 			}
 		}
 		modifier = {
-			factor = 0.05
+			factor = 0.04
 			scale = yes
 			potential = {
 				OR = {
 					has_port = yes
-					is_capital = yes
+					AND = {
+						development = 10
+						is_capital = yes
+					}
 				}
 			}
 			custom_trigger_tooltip = {
 				tooltip = tooltip_colonialism_origin
 				new_world_i_origin = {
-					same_superregion = PREV
+					same_continent = PREV
 				}
 				OR = {
 					has_port = yes
-					is_capital = yes
+					AND = {
+						development = 10
+						is_capital = yes
+					}
 				}
 			}
 		}

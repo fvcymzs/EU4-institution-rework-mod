@@ -717,21 +717,11 @@ new_world_i = {
 			has_any_exploration_idea = yes
 			#at least one province colonised or colonising, or have a subject colony
 			OR = {
-				OR = {
-					owner = {
-						any_owned_province = {
-							continent = north_america
-						}
-					}
-					owner = {
-						any_owned_province = {
-							continent = south_america
-						}
-					}
-					owner = {
-						any_owned_province = {
-							continent = new_world
-						}
+				any_owned_province = {
+					OR = {
+						continent = north_america
+						continent = south_america
+						continent = new_world
 					}
 				}
 				any_subject_country = {
@@ -865,19 +855,11 @@ new_world_i = {
 					has_port = yes
 					is_capital = yes
 				}
-				OR = {
-					owner = {
-						any_owned_province = {
+				owner = {
+					any_owned_province = {
+						OR = {
 							continent = north_america
-						}
-					}
-					owner = {
-						any_owned_province = {
 							continent = south_america
-						}
-					}
-					owner = {
-						any_owned_province = {
 							continent = new_world
 						}
 					}
@@ -888,7 +870,6 @@ new_world_i = {
 			factor = 0.05
 			scale = yes
 			potential = {
-				superregion = europe_superregion
 				OR = {
 					has_port = yes
 					is_capital = yes
@@ -896,7 +877,9 @@ new_world_i = {
 			}
 			custom_trigger_tooltip = {
 				tooltip = tooltip_colonialism_origin
-				superregion = europe_superregion
+				new_world_i_origin = {
+					same_superregion = PREV
+				}
 				OR = {
 					has_port = yes
 					is_capital = yes

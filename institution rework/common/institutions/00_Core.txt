@@ -799,7 +799,8 @@ new_world_i = {
 		
 		#Port provinces in countries with colonial subjects
 		modifier = {
-			factor = 10
+			factor = 5
+			scale = yes
 			potential = {
 				OR = {
 					has_port = yes
@@ -835,6 +836,7 @@ new_world_i = {
 		}
 		modifier = {
 			factor = 1
+			scale = yes
 			potential = {
 				OR = {
 					has_port = yes
@@ -867,7 +869,7 @@ new_world_i = {
 			}
 		}
 		modifier = {
-			factor = 0.04
+			factor = 0.01
 			scale = yes
 			potential = {
 				OR = {
@@ -1073,8 +1075,13 @@ printing_press = {
 	can_start = {
 		is_year = 1550
 		is_institution_enabled = new_world_i
-		renaissance = 100
-		owner = { has_institution = renaissance }
+		OR = {
+			AND = {
+				renaissance = 100
+				owner = { has_institution = renaissance }
+			}
+			printing_press = 100 # some missions might give it before 1550
+		}
 		OR = {
 			owner = { has_institution = new_world_i }
 			owner = {
@@ -1085,6 +1092,7 @@ printing_press = {
 					religion = hussite
 				}
 			}
+			printing_press = 100 # some missions might give it before 1550
 		}
 		is_in_capital_area = yes
 		is_island = no
@@ -1112,7 +1120,14 @@ printing_press = {
 			}
 			printing_press = 100 # some missions might give it before 1550
 		}
-
+		if = {
+			limit = {
+				any_province = {
+					printing_press = 100 # some missions might give it before 1550
+				}
+			}
+			printing_press = 100 # some missions might give it before 1550
+		}
 	}
 	start_chance = 100		#in 100 for when a province can_start
 	
@@ -1197,10 +1212,10 @@ printing_press = {
 			factor = 0.05
 			scale = yes
 			custom_trigger_tooltip = {
-				tooltip = tooltip_dip_tech18_capital
+				tooltip = tooltip_dip_tech15_capital
 				is_capital = yes
 				owner = {
-					dip_tech = 18
+					dip_tech = 15
 				}
 			}
 		}

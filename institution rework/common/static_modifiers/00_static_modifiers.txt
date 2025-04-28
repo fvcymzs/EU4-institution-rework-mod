@@ -255,7 +255,7 @@ knowledge_sharing = {
 }
 
 cardinals_spread_institution = {
-	institution_growth = 2
+	institution_growth = 1.2
 }
 
 manpower = {

@@ -775,8 +775,7 @@ new_world_i = {
 				any_friendly_coast_border_province = {
 					new_world_i = 100
 				}
-			}
-			
+			}	
 		}
 		
 		modifier = {
@@ -792,6 +791,7 @@ new_world_i = {
 			custom_trigger_tooltip = {
 				tooltip = tooltip_any_neighbor_has_embraced_colonialism
 				any_neighbor_province = {
+					NOT = { owned_by = ROOT }
 					new_world_i = 100
 				}
 			}
@@ -799,7 +799,7 @@ new_world_i = {
 		
 		#Port provinces in countries with colonial subjects
 		modifier = {
-			factor = 5
+			factor = 1
 			scale = yes
 			potential = {
 				OR = {
@@ -835,7 +835,7 @@ new_world_i = {
 			}
 		}
 		modifier = {
-			factor = 1
+			factor = 0.2
 			scale = yes
 			potential = {
 				OR = {
@@ -1223,79 +1223,60 @@ printing_press = {
 			factor = 0.05
 			scale = yes
 			potential = {
-				continent = europe
+				printing_press_origin = {
+					same_continent = PREV
+				}
 			}
 			custom_trigger_tooltip = {
-				tooltip = tooltip_development_20_capital
+				tooltip = tooltip_development_20_capital_in_origin
 				development = 20
 				is_capital = yes
-				continent = europe
+				printing_press_origin = {
+					same_continent = PREV
+				}
 			}
 		}
 		modifier = {
-			factor = 2
+			factor = 0.2
+			scale = yes
 			potential = {
+				current_age = age_of_reformation
+				continent = europe
 				owner = {
 					religion_group = christian
 				}
 			}
-			if = {
-				limit = { has_dlc = "Rule Britannia" }
-				custom_trigger_tooltip = {
-					tooltip = tooltip_owner_protestant
-					is_owned_by_trade_company = no
-					owner = {
-						OR = {
-							religion = protestant
-							religion = reformed
-							religion = anglican
-							religion = hussite
-						}
-					}
-				}
-			}
-			else = {
-				custom_trigger_tooltip = {
-					tooltip = tooltip_owner_protestant
-					is_owned_by_trade_company = no
-					owner = {
-						OR = {
-							religion = protestant
-							religion = reformed
-							religion = anglican
-							religion = hussite
-						}
+			custom_trigger_tooltip = {
+				tooltip = tooltip_owner_protestant_in_reformation
+				is_owned_by_trade_company = no
+				owner = {
+					OR = {
+						religion = protestant
+						religion = reformed
+						religion = anglican
+						religion = hussite
 					}
 				}
 			}
 		}
 		modifier = {
-			factor = 1
-			if = {
-				limit = {
-					has_dlc = "Rule Britannia"
-				}
-				custom_trigger_tooltip = {
-					tooltip = tooltip_province_protestant_RB
-					is_owned_by_trade_company = no
-					OR = {
-						religion = reformed
-						religion = protestant
-						religion = anglican
-						religion = hussite
-					}
+			factor = 0.2
+			scale = yes
+			potential = {
+				current_age = age_of_reformation
+				continent = europe
+				owner = {
+					religion_group = christian
 				}
 			}
-			else = {
-				custom_trigger_tooltip = {
-					tooltip = tooltip_province_protestant
-					is_owned_by_trade_company = no
-					OR = {
-						religion = reformed
-						religion = protestant
-						religion = anglican
-						religion = hussite
-					}
+			custom_trigger_tooltip = {
+				tooltip = tooltip_province_protestant_in_reformation
+				is_owned_by_trade_company = no
+				OR = {
+					religion = reformed
+					religion = protestant
+					religion = anglican
+					religion = hussite
 				}
 			}
 		}
@@ -1542,31 +1523,25 @@ global_trade = {
 			factor = 0.01
 			scale = yes
 			is_owned_by_trade_company = no
-			province_trade_power = 30
+			province_trade_power = 25
 		}
 		modifier = {
 			factor = 0.05
 			scale = yes
 			is_owned_by_trade_company = no
-			province_trade_power = 60
-		}
-		modifier = {
-			factor = 0.1
-			scale = yes
-			is_owned_by_trade_company = no
-			province_trade_power = 90
+			province_trade_power = 50
 		}
 		modifier = {
 			factor = 0.2
 			scale = yes
 			is_owned_by_trade_company = no
-			province_trade_power = 120
+			province_trade_power = 75
 		}
 		modifier = {
-			factor = 0.4
+			factor = 0.6
 			scale = yes
 			is_owned_by_trade_company = no
-			province_trade_power = 150
+			province_trade_power = 100
 		}
 		modifier = {
 			factor = 0.1
@@ -1847,7 +1822,7 @@ manufactories = {
 			}
 		}
 		modifier = {
-			factor = 0.4
+			factor = 0.3
 			scale = yes
 			potential = {
 				OR = {
@@ -1867,7 +1842,7 @@ manufactories = {
 			}
 		}
 		modifier = {
-			factor = 0.4
+			factor = 0.3
 			scale = yes
 			potential = {
 				OR = {
@@ -1885,7 +1860,7 @@ manufactories = {
 			}
 		}
 		modifier = {
-			factor = 0.4
+			factor = 0.3
 			scale = yes
 			potential = {
 				OR = {
@@ -1905,7 +1880,7 @@ manufactories = {
 			}
 		}
 		modifier = {
-			factor = 0.4
+			factor = 0.3
 			scale = yes
 			potential = {
 				OR = {
@@ -1927,7 +1902,7 @@ manufactories = {
 			}
 		}
 		modifier = {
-			factor = 0.4
+			factor = 0.3
 			scale = yes
 			potential = {
 				OR = {
@@ -1949,7 +1924,7 @@ manufactories = {
 			}
 		}
 		modifier = {
-			factor = 0.4
+			factor = 0.3
 			scale = yes
 			potential = {
 				OR = {
@@ -1968,7 +1943,7 @@ manufactories = {
 			}
 		}
 		modifier = {
-			factor = 0.4
+			factor = 0.3
 			scale = yes
 			potential = {
 				OR = {
@@ -1989,7 +1964,7 @@ manufactories = {
 			}
 		}
 		modifier = {
-			factor = 0.04
+			factor = 0.06
 			scale = yes
 			potential = {
 				OR = {
@@ -2008,7 +1983,7 @@ manufactories = {
 			}
 		}
 		modifier = {
-			factor = 0.04
+			factor = 0.06
 			scale = yes
 			potential = {
 				OR = {
@@ -2026,7 +2001,7 @@ manufactories = {
 			}
 		}
 		modifier = {
-			factor = 0.04
+			factor = 0.06
 			scale = yes
 			potential = {
 				OR = {
@@ -2046,7 +2021,7 @@ manufactories = {
 			}
 		}
 		modifier = {
-			factor = 0.04
+			factor = 0.06
 			scale = yes
 			potential = {
 				OR = {
@@ -2068,7 +2043,7 @@ manufactories = {
 			}
 		}
 		modifier = {
-			factor = 0.04
+			factor = 0.06
 			scale = yes
 			potential = {
 				OR = {
@@ -2090,7 +2065,7 @@ manufactories = {
 			}
 		}
 		modifier = {
-			factor = 0.04
+			factor = 0.06
 			scale = yes
 			potential = {
 				OR = {
@@ -2109,7 +2084,7 @@ manufactories = {
 			}
 		}
 		modifier = {
-			factor = 0.04
+			factor = 0.06
 			scale = yes
 			potential = {
 				OR = {
@@ -2288,7 +2263,16 @@ enlightenment = {
 		is_in_capital_area = yes
 		is_island = no
 		is_state = yes
-		development = 35
+		OR = {
+			development = 35
+			AND = {
+				development = 25
+				OR = {
+					owner = { innovativeness = 100 }
+					owner = { full_idea_group = innovativeness_ideas }
+				}
+			}
+		}
 		OR = {
 			custom_trigger_tooltip = {
 				tooltip = tooltip_has_seat_in_parliament
@@ -2296,14 +2280,15 @@ enlightenment = {
 			}
 			has_building = university
 			AND = {
-				continent = europe
+				manufactories_origin = {
+					same_continent = PREV
+				}
 				owner = {
 					ADM = 5
 					MIL = 5
 					DIP = 5
 				}
 			}
-			
 		}
 	}
 	start_chance = 100		#in 100 for when a province can_start
@@ -2392,6 +2377,7 @@ enlightenment = {
 		}
 		modifier = {
 			factor = 0.2
+			scale = yes
 			potential = {
 				enlightenment_origin = {
 					same_continent = PREV
@@ -2405,7 +2391,8 @@ enlightenment = {
 			}
 		}
 		modifier = {
-			factor = 0.02
+			factor = 0.04
+			scale = yes
 			potential = {
 				enlightenment_origin = {
 					NOT = { same_continent = PREV }
@@ -2420,6 +2407,7 @@ enlightenment = {
 		}
 		modifier = {
 			factor = 0.1
+			scale = yes
 			potential = {
 				owner = {
 					has_parliament = yes
@@ -2436,7 +2424,8 @@ enlightenment = {
 			}
 		}
 		modifier = {
-			factor = 0.01
+			factor = 0.02
+			scale = yes
 			potential = {
 				owner = {
 					has_parliament = yes
@@ -2460,11 +2449,11 @@ enlightenment = {
 				}
 			}
 			custom_trigger_tooltip = {
-				tooltip = tooltip_philosopher_capital_24
+				tooltip = tooltip_philosopher_capital_26
 				is_capital = yes
 				owner = {
 					advisor = philosopher
-					dip_tech = 24
+					dip_tech = 26
 				}
 			}
 		}
@@ -2477,11 +2466,11 @@ enlightenment = {
 				}
 			}
 			custom_trigger_tooltip = {
-				tooltip = tooltip_scientist_capital_24
+				tooltip = tooltip_scientist_capital_26
 				is_capital = yes
 				owner = {
 					advisor = natural_scientist
-					dip_tech = 24
+					dip_tech = 26
 				}
 			}
 		}
@@ -2494,11 +2483,11 @@ enlightenment = {
 				}
 			}
 			custom_trigger_tooltip = {
-				tooltip = tooltip_full_innovativeness_23
+				tooltip = tooltip_full_innovativeness_24
 				is_capital = yes
 				owner = {
 					full_idea_group = innovativeness_ideas
-					dip_tech = 23
+					dip_tech = 24
 				}
 			}
 		}
@@ -2694,27 +2683,8 @@ industrialization = {
 
 	
 	embracement_speed = {
-		#Split between RB and non-RB for these four as RB gives more possibilities for spread (so higher for non-RB to compensate
 		modifier = {
 			factor = 0.1
-			force_potential = yes
-			potential = {
-				has_dlc = "Rule Britannia"
-			}
-			scale = yes
-			custom_trigger_tooltip = {
-				tooltip = tooltip_any_friendly_coast_border_province_has_embraced_industrialization
-				any_friendly_coast_border_province = {
-					industrialization = 100
-				}
-			}
-		}
-		modifier = {
-			factor = 0.1
-			force_potential = yes
-			potential = {
-				NOT = { has_dlc = "Rule Britannia" }
-			}
 			scale = yes
 			custom_trigger_tooltip = {
 				tooltip = tooltip_any_friendly_coast_border_province_has_embraced_industrialization
@@ -2726,15 +2696,6 @@ industrialization = {
 		modifier = {
 			factor = 0.02
 			scale = yes
-			force_potential = yes
-			potential = {
-				has_dlc = "Rule Britannia"
-				NOT = {
-					any_friendly_coast_border_province = {
-						industrialization = 100
-					}
-				}
-			}
 			custom_trigger_tooltip = {
 				tooltip = tooltip_any_neighbor_has_embraced_industrialization
 				any_neighbor_province = {
@@ -2743,30 +2704,27 @@ industrialization = {
 				}
 			}
 		}
-		modifier = {
-			factor = 0.02
-			scale = yes
-			force_potential = yes
-			potential = {
-				NOT = { has_dlc = "Rule Britannia" }
-				NOT = {
-					any_friendly_coast_border_province = {
-						industrialization = 100
-					}
-				}
-			}
-			custom_trigger_tooltip = {
-				tooltip = tooltip_any_neighbor_has_embraced_industrialization
-				any_neighbor_province = {
-					NOT = { owned_by = ROOT }
-					industrialization = 100
-				}
-			}
-		}
+
 		#Rule Britannia specific
 		modifier = {
-			factor = 0.5
-			force_potential = yes
+			factor = 0.05
+			scale = yes
+			potential = {
+				has_dlc = "Rule Britannia"
+				has_manufactory_trigger = yes
+				development = 30
+			}
+			custom_trigger_tooltip = {
+				tooltip = tooltip_inovativeness_50_i
+				is_owned_by_trade_company = no
+				owner = {
+					innovativeness = 50
+				}
+			}
+		}
+		modifier = {
+			factor = 0.1
+			scale = yes
 			potential = {
 				has_dlc = "Rule Britannia"
 				has_manufactory_trigger = yes
@@ -2781,25 +2739,8 @@ industrialization = {
 			}
 		}
 		modifier = {
-			factor = 1
-			force_potential = yes
-			potential = {
-				has_dlc = "Rule Britannia"
-				has_manufactory_trigger = yes
-				development = 30
-			}
-			custom_trigger_tooltip = {
-				tooltip = tooltip_inovativeness_200_i
-				is_owned_by_trade_company = no
-				owner = {
-					innovativeness = 200
-				}
-			}
-		}
-		modifier = {
-			factor = 0.4
+			factor = 0.3
 			scale = yes
-			force_potential = yes
 			potential = {
 				has_dlc = "Rule Britannia"
 				OR = {
@@ -2817,9 +2758,8 @@ industrialization = {
 			}
 		}
 		modifier = {
-			factor = 0.04
+			factor = 0.06
 			scale = yes
-			force_potential = yes
 			potential = {
 				has_dlc = "Rule Britannia"
 				OR = {
@@ -2981,7 +2921,7 @@ industrialization = {
 			}
 		}
 		modifier = {
-			factor = 0.01
+			factor = 0.02
 			scale = yes
 			potential = {
 				OR = {
@@ -3000,7 +2940,7 @@ industrialization = {
 			}
 		}
 		modifier = {
-			factor = 0.01
+			factor = 0.02
 			scale = yes
 			potential = {
 				OR = {
@@ -3018,7 +2958,7 @@ industrialization = {
 			}
 		}
 		modifier = {
-			factor = 0.01
+			factor = 0.02
 			scale = yes
 			potential = {
 				OR = {
@@ -3038,7 +2978,7 @@ industrialization = {
 			}
 		}
 		modifier = {
-			factor = 0.01
+			factor = 0.02
 			scale = yes
 			potential = {
 				OR = {
@@ -3060,7 +3000,7 @@ industrialization = {
 			}
 		}
 		modifier = {
-			factor = 0.01
+			factor = 0.02
 			scale = yes
 			potential = {
 				OR = {
@@ -3082,7 +3022,7 @@ industrialization = {
 			}
 		}
 		modifier = {
-			factor = 0.01
+			factor = 0.02
 			scale = yes
 			potential = {
 				OR = {
@@ -3101,7 +3041,7 @@ industrialization = {
 			}
 		}
 		modifier = {
-			factor = 0.01
+			factor = 0.02
 			scale = yes
 			potential = {
 				OR = {
@@ -3124,7 +3064,7 @@ industrialization = {
 
 		#Trade variables
 		modifier = {
-			factor = 3
+			factor = 2
 			potential = {
 				province_trade_power = 100
 			}
@@ -3136,7 +3076,7 @@ industrialization = {
 			}
 		}
 		modifier = {
-			factor = 3
+			factor = 2
 			potential = {
 				continent = owner
 				has_port = yes

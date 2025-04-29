@@ -1128,6 +1128,7 @@ printing_press = {
 					religion = reformed
 					religion = anglican
 					religion = hussite
+					culture_group = east_asian
 				}
 			}
 		}
@@ -1260,6 +1261,19 @@ printing_press = {
 					religion = anglican
 					religion = hussite
 				}
+			}
+		}
+		modifier = {
+			factor = 0.2
+			scale = yes
+			potential = {
+				culture_group = east_asian
+			}
+			custom_trigger_tooltip = {
+				tooltip = tooltip_east_asian_printing_press
+				is_owned_by_trade_company = no
+				trade_goods = paper
+				owner = { has_institution = renaissance }
 			}
 		}
 		modifier = {

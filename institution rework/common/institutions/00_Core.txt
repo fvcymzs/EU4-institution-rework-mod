@@ -3066,7 +3066,8 @@ industrialization = {
 
 		#Trade variables
 		modifier = {
-			factor = 2
+			factor = 0.05
+			scale = yes
 			potential = {
 				province_trade_power = 100
 			}
@@ -3078,7 +3079,8 @@ industrialization = {
 			}
 		}
 		modifier = {
-			factor = 2
+			factor = 0.05
+			scale = yes
 			potential = {
 				continent = owner
 				has_port = yes

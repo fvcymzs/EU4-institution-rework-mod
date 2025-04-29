@@ -178,7 +178,7 @@ augustinians = {
         }
     }
     modifier = {
-		institution_growth = 3
+		institution_growth = 0.6
 		local_missionary_maintenance_cost = -0.5
     }
     ai_priority = {

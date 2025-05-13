@@ -159,7 +159,14 @@ feudalism = {
 		modifier = {
 			factor = 0.05
 			scale = yes
-			has_fort_building_trigger = yes
+			custom_trigger_tooltip = {
+				tooltip = fort_in_old_world
+				has_fort_building_trigger = yes
+				NOT = { continent = north_america }
+				NOT = { continent = south_america }
+				NOT = { continent = new_world }
+				NOT = { region = australia_region }
+			}
 		}
 		modifier = {
 			factor = 0.15
@@ -364,7 +371,6 @@ renaissance = {
 	can_start = {
 		is_year = 1450
 		is_institution_enabled = feudalism
-		region = italy_region
 		is_state = yes
 		NOT = { province_id = 126 }
 		is_island = no
@@ -374,8 +380,22 @@ renaissance = {
 				is_capital = yes
 				development = 15
 			}
-			normal_or_historical_nations = no
-			is_year = 1475
+		}
+		OR = {
+			AND = {
+				OR = {
+					NOT = { exists = BYZ }
+					is_year = 1455
+				}
+				region = italy_region
+			}
+			owner = {
+				tag = BYZ
+				OR = {
+					NOT = { exists = TUR }
+					has_won_war_against = { who = TUR }
+				}
+			}
 		}
 	}
 	start_chance = 100		#in 100 for when a province can_start

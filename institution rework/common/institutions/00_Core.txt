@@ -129,7 +129,7 @@ feudalism = {
 
 	embracement_speed = {
 		modifier = {
-			factor = 0.25
+			factor = 0.1
 			scale = yes
 			custom_trigger_tooltip = {
 				tooltip = same_culture_group_neighbor_has_embraced_feudalism
@@ -430,7 +430,7 @@ renaissance = {
 	
 	embracement_speed = {
 		modifier = {
-			factor = 0.2
+			factor = 0.1
 			scale = yes
 			custom_trigger_tooltip = {
 				tooltip = same_culture_group_neighbor_has_embraced_renaissance
@@ -821,7 +821,7 @@ new_world_i = {
 	
 	embracement_speed = {
 		modifier = {
-			factor = 0.2
+			factor = 0.1
 			scale = yes
 			custom_trigger_tooltip = {
 				tooltip = same_culture_group_neighbor_has_embraced_colonialism
@@ -1196,7 +1196,7 @@ printing_press = {
 	
 	embracement_speed = {
 		modifier = {
-			factor = 0.15
+			factor = 0.1
 			scale = yes
 			custom_trigger_tooltip = {
 				tooltip = same_culture_group_neighbor_has_embraced_printing_press
@@ -1557,7 +1557,7 @@ global_trade = {
 	
 	embracement_speed = {
 		modifier = {
-			factor = 0.15
+			factor = 0.1
 			scale = yes
 			custom_trigger_tooltip = {
 				tooltip = same_culture_group_neighbor_has_embraced_global_trade
@@ -2797,7 +2797,7 @@ industrialization = {
 	
 	embracement_speed = {
 		modifier = {
-			factor = 0.05
+			factor = 0.1
 			scale = yes
 			custom_trigger_tooltip = {
 				tooltip = same_culture_group_neighbor_has_embraced_industrialization

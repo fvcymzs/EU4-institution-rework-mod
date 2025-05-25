@@ -129,6 +129,19 @@ feudalism = {
 
 	embracement_speed = {
 		modifier = {
+			factor = 0.25
+			scale = yes
+			custom_trigger_tooltip = {
+				tooltip = same_culture_group_neighbor_has_embraced_feudalism
+				culture_group = ROOT
+				any_neighbor_province = {
+					owned_by = ROOT
+					feudalism = 100
+					culture_group = ROOT
+				}
+			}
+		}
+		modifier = {
 			factor = 0.5
 			scale = yes
 			custom_trigger_tooltip = {
@@ -416,6 +429,19 @@ renaissance = {
 
 	
 	embracement_speed = {
+		modifier = {
+			factor = 0.2
+			scale = yes
+			custom_trigger_tooltip = {
+				tooltip = same_culture_group_neighbor_has_embraced_renaissance
+				culture_group = ROOT
+				any_neighbor_province = {
+					owned_by = ROOT
+					renaissance = 100
+					culture_group = ROOT
+				}
+			}
+		}
 		modifier = {
 			scale = yes
 			factor = 0.4
@@ -794,7 +820,20 @@ new_world_i = {
 
 	
 	embracement_speed = {
-	
+		modifier = {
+			factor = 0.2
+			scale = yes
+			custom_trigger_tooltip = {
+				tooltip = same_culture_group_neighbor_has_embraced_colonialism
+				culture_group = ROOT
+				any_neighbor_province = {
+					owned_by = ROOT
+					new_world_i = 100
+					culture_group = ROOT
+				}
+			}
+		}
+
 		modifier = {
 			factor = 0.4
 			scale = yes
@@ -1156,6 +1195,19 @@ printing_press = {
 
 	
 	embracement_speed = {
+		modifier = {
+			factor = 0.15
+			scale = yes
+			custom_trigger_tooltip = {
+				tooltip = same_culture_group_neighbor_has_embraced_printing_press
+				culture_group = ROOT
+				any_neighbor_province = {
+					owned_by = ROOT
+					printing_press = 100
+					culture_group = ROOT
+				}
+			}
+		}
 	
 		modifier = {
 			factor = 0.3
@@ -1504,6 +1556,19 @@ global_trade = {
 
 	
 	embracement_speed = {
+		modifier = {
+			factor = 0.15
+			scale = yes
+			custom_trigger_tooltip = {
+				tooltip = same_culture_group_neighbor_has_embraced_global_trade
+				culture_group = ROOT
+				any_neighbor_province = {
+					owned_by = ROOT
+					global_trade = 100
+					culture_group = ROOT
+				}
+			}
+		}
 
 		modifier = {
 			factor = 0.3
@@ -1815,6 +1880,19 @@ manufactories = {
 
 	
 	embracement_speed = {
+		modifier = {
+			factor = 0.1
+			scale = yes
+			custom_trigger_tooltip = {
+				tooltip = same_culture_group_neighbor_has_embraced_manufactories
+				culture_group = ROOT
+				any_neighbor_province = {
+					owned_by = ROOT
+					manufactories = 100
+					culture_group = ROOT
+				}
+			}
+		}
 		modifier = {
 			factor = 0.2
 			scale = yes
@@ -2328,6 +2406,19 @@ enlightenment = {
 	
 	embracement_speed = {
 		modifier = {
+			factor = 0.1
+			scale = yes
+			custom_trigger_tooltip = {
+				tooltip = same_culture_group_neighbor_has_embraced_enlightenment
+				culture_group = ROOT
+				any_neighbor_province = {
+					owned_by = ROOT
+					enlightenment = 100
+					culture_group = ROOT
+				}
+			}
+		}
+		modifier = {
 			factor = 0.2
 			scale = yes
 			custom_trigger_tooltip = {
@@ -2705,6 +2796,19 @@ industrialization = {
 
 	
 	embracement_speed = {
+		modifier = {
+			factor = 0.05
+			scale = yes
+			custom_trigger_tooltip = {
+				tooltip = same_culture_group_neighbor_has_embraced_industrialization
+				culture_group = ROOT
+				any_neighbor_province = {
+					owned_by = ROOT
+					industrialization = 100
+					culture_group = ROOT
+				}
+			}
+		}
 		modifier = {
 			factor = 0.1
 			scale = yes
